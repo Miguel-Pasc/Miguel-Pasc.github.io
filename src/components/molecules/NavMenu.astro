@@ -1,0 +1,15 @@
+---
+import NavLink from "../atoms/NavLink.astro";
+
+const links = [
+  { label: "Acerca de mi", href: "#acerca" },
+  { label: "Habilidades", href: "#habilidades" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Contacto", href: "#contacto" },
+];
+---
+<nav class="flex gap-8">
+  {links.map(link => (
+    <NavLink label={link.label} href={link.href} />
+  ))}
+</nav>
