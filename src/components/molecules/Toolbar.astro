@@ -2,11 +2,43 @@
 import Logo from "../atoms/Logo.astro";
 import NavMenu from "./NavMenu.astro";
 ---
-<header class="w-full bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-700 fixed">
-  <div class="max-w-7xl mx-auto flex items-center justify-between p-5">
+
+<header
+  class="w-full bg-[#fafafa]/50 shadow-gray-400/50 dark:bg-gray-900/50 shadow-md dark:shadow-gray-700 fixed"
+>
+  <div
+    class="max-w-8xl mx-auto flex items-center justify-between p-5 pl-15 pr-15"
+  >
     <Logo />
     <div class="flex items-center gap-6">
       <NavMenu />
+      <button id="theme-toggle" class="p-2 rounded"> 🌙 </button>
+      <script>
+        window.onload = () => {
+          const btn = document.getElementById("theme-toggle");
+
+          if (!btn) return; // evita errores
+
+          btn.addEventListener("click", () => {
+            const html = document.documentElement;
+            const isDark = html.classList.contains("dark");
+
+            if (isDark) {
+              html.classList.remove("dark");
+              localStorage.theme = "light";
+              btn.textContent = "🌙";
+            } else {
+              html.classList.add("dark");
+              localStorage.theme = "dark";
+              btn.textContent = "☀️";
+            }
+          });
+
+          if (document.documentElement.classList.contains("dark")) {
+            btn.textContent = "☀️";
+          }
+        };
+      </script>
     </div>
   </div>
 </header>
