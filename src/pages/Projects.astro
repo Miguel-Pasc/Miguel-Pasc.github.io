@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+import Toolbar from "../components/molecules/Toolbar.astro";
+import Footer from "../components/templates/Footer.astro";
+import ProjectCard from "../components/molecules/ProjectCard.astro";
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Proyectos</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <Toolbar />
+    <body
+        class="font-sans bg-[#f3f4f5] text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col min-h-screen"
+    >
+        <section id="proyectos" class="p-8 space-y-16 flex-1">
+            <h2 class="text-xl font-semibold pt-20">Proyectos</h2>
+
+            <section
+                id="proyectos"
+                class="max-w-[1000px] mx-auto my-10 bg-white rounded-[15px] shadow-lg p-[60px_20px] font-sans text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+            >
+                <h2
+                    class="text-center text-blue-700 text-2xl font-semibold mb-8 dark:text-blue-200"
+                >
+                    Proyectos
+                </h2>
+
+                <div class="flex flex-wrap justify-center gap-5">
+                    <!-- Prueba -->
+                    <ProjectCard />
+
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-xl w-[280px] shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 font-sans text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+                    >
+                        <img
+                            src=""
+                            alt=""
+                            class="w-full h-[180px] object-cover"
+                        />
+                        <h3
+                            class="text-blue-700 text-xl font-semibold text-center mt-3"
+                        >
+                            1
+                        </h3>
+                        <p class="text-center text-gray-700 px-3 pb-5">
+                            Descripcion
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white rounded-xl w-[280px] shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 font-sans text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+                    >
+                        <img
+                            src=""
+                            alt=""
+                            class="w-full h-[180px] object-cover"
+                        />
+                        <h3
+                            class="text-blue-700 text-xl font-semibold text-center mt-3"
+                        >
+                            2
+                        </h3>
+                        <p class="text-center text-gray-700 px-3 pb-5">
+                            Descripcion
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white rounded-xl w-[280px] shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 font-sans text-gray-900 dark:bg-gray-950 dark:text-gray-100l"
+                    >
+                        <img
+                            src=""
+                            alt=""
+                            class="w-full h-[180px] object-cover"
+                        />
+                        <h3
+                            class="text-blue-700 text-xl font-semibold text-center mt-3"
+                        >
+                            3
+                        </h3>
+                        <p class="text-center text-gray-700 px-3 pb-5">
+                            Descripcion
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </body>
+    <Footer />
+</html>

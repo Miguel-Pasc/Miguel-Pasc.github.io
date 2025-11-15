@@ -9,3 +9,12 @@ export default defineConfig({
     plugins: [tailwindcss()]
   }
 });
+
+// module.exports = {
+//   darkMode: 'class', // o 'media', pero 'class' te da más control
+//   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}'],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }

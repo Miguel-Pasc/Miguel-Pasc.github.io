@@ -1,43 +1,36 @@
 ---
-
-import '../styles/global.css'
-import AboutMe from "../components/templates/AboutMe.astro"
-import Skills from "../components/templates/Skills.astro"
-import Projects from "../components/templates/Projects.astro"
-import Contact from "../components/templates/Contact.astro"
+import "../styles/global.css";
 import Toolbar from "../components/molecules/Toolbar.astro";
+import Main from "../components/templates/Main.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Miguel</title>
-</head>
-<body  class="font-sans">
-    <Toolbar />
-    <main class="p-8 space-y-16">
-        <section id="acerca">
-            <h2 class="text-xl font-semibold pt-20">Acerca de mi</h2>
-            <AboutMe />
-        </section>
-        <section id="habilidades">
-            <h2 class="text-xl font-semibold pt-20">Habilidades</h2>
-            <Skills />
-        </section>
-        <section id="proyectos">
-            <h2 class="text-xl font-semibold">Proyectos</h2>
-            <Projects />
-        </section>
-        <section id="contacto">
-            <h2 class="text-xl font-semibold">Contacto</h2>
-            <Contact />
-        </section>
-    </main>
 
-    
-</body>
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portafolio Miguel</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body
+        class="font-sans bg-[#f3f4f5] text-gray-900 dark:bg-black dark:text-gray-100"
+    >
+        <Toolbar />
+        <Main />
+    </body>
 </html>

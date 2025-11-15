@@ -1,0 +1,117 @@
+---
+import "../styles/global.css";
+import Toolbar from "../components/molecules/Toolbar.astro";
+import Footer from "../components/templates/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacto</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <Toolbar />
+    <body
+        class="font-sans bg-[#f3f4f5] text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col min-h-screen"
+    >
+        <section id="contacto" class="p-8 space-y-16 flex-1">
+            <h2 class="text-xl font-semibold pt-20">Contacto</h2>
+
+            <section
+                id="contacto"
+                class="max-w-[1000px] mx-auto my-10 bg-[#ffffff] rounded-[15px] shadow-lg p-[0px_60px] font-sans text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+            >
+                <div>
+                    <form action="#" method="POST" class="space-y-6 p-[40px_5px]">
+                        <div>
+                            <label
+                                for="nombre"
+                                class="block text-sm font-semibold text-gray-800 mb-2 dark:text-gray-100"
+                                >Nombre completo</label
+                            >
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Ingresa tu nombre"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg dark:bg-gray-900 text-gray-50 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="correo"
+                                class="block text-sm font-semibold text-gray-800 mb-2 dark:text-gray-100"
+                                >Correo electrónico</label
+                            >
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg dark:bg-gray-900 text-gray-50 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="asunto"
+                                class="block text-sm font-semibold text-gray-800 mb-2 dark:text-gray-100"
+                                >Asunto</label
+                            >
+                            <input
+                                type="text"
+                                id="asunto"
+                                name="asunto"
+                                placeholder="Motivo del mensaje"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg dark:bg-gray-900 text-gray-50 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="mensaje"
+                                class="block text-sm font-semibold text-gray-800 mb-2 dark:text-gray-100"
+                                >Mensaje</label
+                            >
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                placeholder="Escribe tu mensaje aquí..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg dark:bg-gray-900 text-gray-50 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
+                                required></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button
+                                type="submit"
+                                class="bg-blue-500 dark:bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md transition-transform transform hover:scale-105 focus:ring-4 focus:ring-blue-300"
+                            >
+                                Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </body>
+    <Footer />
+</html>
