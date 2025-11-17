@@ -1,9 +1,19 @@
+---
+const {source, alternative, title, description, link} = Astro.props;
+---
+
 <div
-    class="bg-white rounded-xl w-[280px] shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 font-sans text-gray-900 dark:bg-gray-600/50 dark:text-gray-50"
+    class="bg-white border-gray-200 dark:border-0 border-2 rounded-xl w-[280px] shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 font-sans text-gray-900 dark:bg-gray-600/50 dark:text-gray-50 p-4 relative"    
 >
-    <img src="" alt="" class="w-full h-[180px] object-cover" />
-    <h3 class="text-blue-700 dark:text-blue-200 text-xl font-semibold text-center mt-3">1</h3>
-    <p class="text-center text-gray-700 dark:text-gray-50 px-3 pb-5">Descripcion
-        
+    <img 
+        src={source}
+        alt={alternative} 
+        class="w-full h-[180px]" />
+    <h3 class="text-blue-700 dark:text-blue-200 text-xl font-semibold text-center mt-3">{title}</h3>
+    <p class="text-justify text-gray-700 dark:text-gray-50 px-3 pb-8">
+        {description}
     </p>
+    <a href={link} target="_self" class="text-center bottom-0 absolute w-full box-border left-0 p-0.5 bg-blue-600 text-white">
+        Ver en github
+    </a>
 </div>
