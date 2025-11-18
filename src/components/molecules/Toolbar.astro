@@ -1,5 +1,4 @@
 ---
-import luna from "../../../public/images/icons/luna.png"
 import Logo from "../atoms/Logo.astro";
 import NavMenu from "./NavMenu.astro";
 ---
@@ -15,7 +14,7 @@ import NavMenu from "./NavMenu.astro";
     <div class="flex items-center gap-6">
       <NavMenu />
       <button id="theme-toggle" class="p-2 rounded"> 
-        <img src="images/icons/luna.png" alt="Icono luna" width="30px"> 
+        <img src="/images/icons/luna.png" alt="Icono luna" width="30px"> 
       </button>
       <script>
         window.onload = () => {
@@ -30,16 +29,16 @@ import NavMenu from "./NavMenu.astro";
             if (isDark) {
               html.classList.remove("dark");
               localStorage.theme = "light";
-              btn.innerHTML = '<img src="images/icons/luna.png" alt="Icono luna" width="30px">'         
+              btn.innerHTML = '<img src="/images/icons/luna.png" alt="Icono luna" width="30px">'         
             } else {
               html.classList.add("dark");
               localStorage.theme = "dark";
-              btn.innerHTML = '<img src="images/icons/sol.webp" alt="Icono sol" width="30px">'
+              btn.innerHTML = '<img src="/images/icons/sol.webp" alt="Icono sol" width="30px">'
             }
           });
 
           if (document.documentElement.classList.contains("dark")) {
-            btn.innerHTML = '<img src="images/icons/sol.webp" alt="Icono sol" width="30px">'            
+            btn.innerHTML = '<img src="/images/icons/sol.webp" alt="Icono sol" width="30px">'            
           }
         };
       </script>
