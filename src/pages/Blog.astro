@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+import Toolbar from "../components/molecules/Toolbar.astro";
+import Footer from "../components/templates/Footer.astro";
+import PostBlog from "../components/molecules/PostBlog.astro";
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+
+    <Toolbar />
+
+    <body
+        class="font-sans bg-[#f3f4f5] text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col min-h-screen"
+    >
+        <section id="contacto" class="p-8 space-y-16 flex-1">
+            <h2 class="text-xl font-semibold pt-20">Mi blog</h2>
+            <div>
+                <h2 class="mb-[30px]">
+                    Estas son algunas de las actividades que he hecho durante mi instancia en la universidad (no todas son en la universidad, unas han sido durante el periodo de estudiar en la universidad).
+                </h2>
+
+                <PostBlog
+                        source="/images/posts/4_concurso_robot.jpg"
+                        alternative="Concurso de robots"
+                        title="Concurso de robots"
+                        description="Durante el primer semestre, una de las actividades propuestas a realizar fue un concurso de sumo de robots, en el cual la ingeniería en sistemas computacionales participaría en su totalidad. Para ello se formaron equipos en cada semestre de la carrera, los cuales adquirirían componentes como arduinos, motores, baterias, entre otras cosas necesarias para armar un robot. En la semana académica, llevada a cabo en diciembre, se realizo el torneo, en el que otras escuelas fueron invitadas, el equipo en el participé llegó a la final, pero quedó en segundo lugar, fue bueno para ser la primera vez que se participó."
+                        fecha="diciembre de 2022"
+                    />
+
+                <PostBlog
+                        source="/images/posts/1_circuitos.jpg"
+                        alternative="circuitos"
+                        title="Aprender sobre circuitos"
+                        description="A raiz de haber participado en el concurso de robots, me propuse a aprender por mi cuenta el uso de los circuitos electrónicos, ya que no poseía ningún conocimiento, y se me hacia interesante aprender al respecto. Por lo que en las primeras vacaciones que tuve de la universidad, al terminar el primer semestre compré componentes para practicar con ellos, que fue a partir del mes de enero, sin embargo, tenia que hacer otras cosas y solamente hice algunas practicas, además de que tenía poquitos componentes y sentia que no podía hacer nada con ellos. (Mas adelante, durante la carrera me di cuenta que no me gustan los circuitos)."
+                        fecha="enero de 2023"
+                    />
+
+                <PostBlog
+                        source="/images/posts/5_centro_cultural.jpg"
+                        alternative="Centro ceremonial Mazahua"
+                        title="Centro ceremonial Mazahua"
+                        description="En el segundo semestre, un docente nos pidió que visitaramos un lugar cultural como actividad de su materia, por lo que estuve buscando lugares y el mas cercano que encontre fue el Centro ceremonial Mazahua. Al lugar fui con mis padres y uno de mis hermanos, fue una bonita experiencia porque nunca habia ido a un lugar asi, me pareció interesante, ademas de que tenia unas bonitas vistas, un espacio bastante extenso, y pude convivir con mi familia, esta visita la realicé durante el periodo escolar, durante el mes de abril."
+                        fecha="abril de 2023"
+                    />
+
+                <PostBlog
+                        source="/images/posts/2_visita_atlacomulco.jpg"
+                        alternative="Pueblo de Atlacomulco"
+                        title="Visita a un pueblo de Atlacomulco"
+                        description="Tengo algunos familiares en Atlacomulco, por lo que de vez en cuando vamos a visitarlos, esta vez habiamos ido en julio, cuando habia salido de vacaciones del segundo semestre, el lugar es bonito, se puede ver el cerro de Joco, se ve bastante bonito, ademas de que tiene bonitas historias el lugar que me han contado, como de un pantano, una iglesia, que tuvieron una pequeña historia durante la independencia, el lugar esta muy cerca de donde se tomó la foto, tiene canales donde fluyen corrientes de agua, y un pequeño lago."
+                        fecha="julio de 2023"
+                    />
+
+                <PostBlog
+                        source="/images/posts/3_camaleon.jpg"
+                        alternative="Camaleón"
+                        title="Camaleón"
+                        description="Me dedico a la agricultura, pero como consumo personal, no para negocio, por lo que cada año cultivamos maíz, esta foto la tomé en mayo, de hace dos años, mientras trabajamos comunmente solemos encontrar un poco de fauna del campo, como por ejemplo este camaleón, el cual era apenas un bebé camaleón, se veía bastante tierno, para ese entonces el maíz apenas esta creciendo por lo que es fácil encontrarlos."
+                        fecha="mayo de 2024"
+                    />            
+                
+            </div>
+        </section>
+    </body>
+    
+    <Footer />
+</html>
